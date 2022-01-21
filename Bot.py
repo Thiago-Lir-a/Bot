@@ -20,5 +20,5 @@ download_capa.click()
 numero_diario = driver.find_element(By.CLASS_NAME, 'txt-hj-pequeno')
 print(numero_diario)
 
-sleep(5)
+sleep(50)
 driver.close()
