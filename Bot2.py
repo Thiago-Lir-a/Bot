@@ -24,12 +24,11 @@ download_capa = driver.find_element(By.CLASS_NAME, 'pdficon')
 # buscando o número do diário para uso posterior
 numero_diario = driver.find_element(By.CLASS_NAME, 'txt-hj-pequeno')
 numero_diario = numero_diario.text.split()
-#numero_diario = int(numero_diario[3]) - 1
-numero_diario = 13140
+numero_diario = int(numero_diario[3]) - 1
 
 # iniciando o loop para baixar os pdf's
 
-while numero_diario > 13072:  # 13072:
+while numero_diario > 13140:
     caixa_busca = driver.find_element(By.ID, "numero")
     caixa_busca.click()
     sleep(2)
@@ -40,12 +39,12 @@ while numero_diario > 13072:  # 13072:
         By.CSS_SELECTOR, '[title="Fazer download"]')
     cont = len(download_arquivo) - 1
     while cont > -1:
-        sleep(3)
+        sleep(2)
         download_arquivo[cont].click()
         cont = cont - 1
     numero_diario = numero_diario - 1
     driver.delete_all_cookies()
-    sleep(3)
+    sleep(2)
 '''
 done = True
 while done == True:
